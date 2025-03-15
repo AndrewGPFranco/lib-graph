@@ -7,6 +7,9 @@ import com.gs.graph.repositories.AnimeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AnimeService {
@@ -22,6 +25,17 @@ public class AnimeService {
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
+    }
+
+    public List<AnimeDTO> getAllAnimes() {
+        List<Anime> allAnimes = repository.findAll();
+
+        if(allAnimes.isEmpty()) return List.of();
+
+        List<AnimeDTO> animeDTOList = new ArrayList<>(allAnimes.size());
+        allAnimes.forEach(anime -> animeDTOList.add(AnimeMapper.entityToDTO(anime)));
+
+        return animeDTOList;
     }
 
 }
