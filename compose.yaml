@@ -1,0 +1,35 @@
+services:
+  postgres:
+    container_name: db-graph
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_DB=${DB}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: ${PROFILE}
+    volumes:
+      - ./src:/app/src
+      - ~/.m2:/root/.m2
+    depends_on:
+      - postgres
+    container_name: lib-graph
+    command: ["sh", "-c", "./mvnw spring-boot:run"]
+
+volumes:
+  postgres_data:
