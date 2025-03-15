@@ -3,7 +3,10 @@ package com.gs.graph.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,6 +14,9 @@ import java.util.UUID;
 
 @Data
 @Entity
+@Builder
+@ToString
+@EqualsAndHashCode
 public class Anime {
 
     @Id
