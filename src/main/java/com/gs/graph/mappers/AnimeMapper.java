@@ -10,10 +10,7 @@ public class AnimeMapper {
     }
 
     public static Anime dtoToEntity(AnimeDTO anime) {
-        return Anime.builder()
-                .title(anime.title())
-                .creationDate(anime.creationDate())
-                .finalizationDate(anime.finalizationDate())
-                .build();
+        return new Anime(anime.title(), anime.creationDate(), anime.finalizationDate());
     }
+
 }

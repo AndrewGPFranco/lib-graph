@@ -3,10 +3,7 @@ package com.gs.graph.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,8 +11,8 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Builder
 @ToString
+@NoArgsConstructor
 @EqualsAndHashCode
 public class Anime {
 
@@ -37,4 +34,9 @@ public class Anime {
 
     private LocalDate finalizationDate;
 
+    public Anime(@NotNull @NotBlank String title, @NotNull LocalDate creationDate, LocalDate finalizationDate) {
+        this.title = title;
+        this.creationDate = creationDate;
+        this.finalizationDate = finalizationDate;
+    }
 }
