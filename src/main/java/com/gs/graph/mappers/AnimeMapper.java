@@ -6,11 +6,12 @@ import com.gs.graph.entities.Anime;
 public class AnimeMapper {
 
     public static AnimeDTO entityToDTO(Anime anime) {
-        return new AnimeDTO(anime.getId(), anime.getTitle(), anime.getCreationDate(), anime.getFinalizationDate());
+        return new AnimeDTO(anime.getId(), anime.getTitle(), anime.getCreationDate(), anime.getUrlImage(),
+                anime.getFinalizationDate());
     }
 
     public static Anime dtoToEntity(AnimeDTO anime) {
-        return new Anime(anime.title(), anime.creationDate(), anime.finalizationDate());
+        return new Anime(anime.title(), anime.creationDate(), anime.finalizationDate(), anime.urlImage());
     }
 
 }

@@ -34,9 +34,16 @@ public class Anime {
 
     private LocalDate finalizationDate;
 
-    public Anime(@NotNull @NotBlank String title, @NotNull LocalDate creationDate, LocalDate finalizationDate) {
+    @NotNull
+    @NotBlank
+    @Column(unique = true)
+    private String urlImage;
+
+    public Anime(@NotNull @NotBlank String title, @NotNull LocalDate creationDate, LocalDate finalizationDate,
+                 String urlImage) {
         this.title = title;
         this.creationDate = creationDate;
         this.finalizationDate = finalizationDate;
+        this.urlImage = urlImage;
     }
 }

@@ -27,8 +27,14 @@ public class Persona {
     @JoinColumn(name = "anime_id", nullable = false)
     private Anime anime;
 
-    public Persona(@NotNull @NotBlank String name, @NotNull Anime anime) {
+    @NotNull
+    @NotBlank
+    @Column(unique = true)
+    private String urlImage;
+
+    public Persona(@NotNull @NotBlank String name, @NotNull Anime anime, String urlImage) {
         this.name = name;
         this.anime = anime;
+        this.urlImage = urlImage;
     }
 }

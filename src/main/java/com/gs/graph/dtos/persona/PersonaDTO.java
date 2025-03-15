@@ -9,7 +9,8 @@ import java.util.UUID;
 public record PersonaDTO(
         UUID id,
         @NotNull @NotBlank String name,
-        @NotNull UUID animeId
+        @NotNull UUID animeId,
+        @NotNull @NotBlank String urlImage
 ) implements ApiResponse {
 
     @Override

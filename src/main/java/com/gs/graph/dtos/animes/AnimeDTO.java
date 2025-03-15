@@ -11,6 +11,7 @@ public record AnimeDTO(
         UUID id,
         @NotNull @NotBlank String title,
         @NotNull LocalDate creationDate,
+        @NotNull @NotBlank String urlImage,
         LocalDate finalizationDate
 ) implements ApiResponse {
 
