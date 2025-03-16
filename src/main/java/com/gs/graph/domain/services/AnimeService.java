@@ -1,9 +1,9 @@
-package com.gs.graph.services;
+package com.gs.graph.domain.services;
 
-import com.gs.graph.dtos.animes.AnimeDTO;
-import com.gs.graph.entities.Anime;
-import com.gs.graph.mappers.AnimeMapper;
-import com.gs.graph.repositories.AnimeRepository;
+import com.gs.graph.adapters.input.dtos.anime.AnimeDTO;
+import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.adapters.input.mappers.AnimeMapper;
+import com.gs.graph.ports.repositories.AnimeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ public class AnimeService {
     public AnimeDTO createAnime(AnimeDTO animeDto) {
         try {
             Anime anime = AnimeMapper.dtoToEntity(animeDto);
-            repository.save(anime);
+            Anime savedAnime = repository.save(anime);
 
-            return AnimeMapper.entityToDTO(anime);
+            return AnimeMapper.entityToDTO(savedAnime);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

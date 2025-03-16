@@ -1,6 +1,6 @@
-package com.gs.graph.dtos.persona;
+package com.gs.graph.adapters.input.dtos.persona;
 
-import com.gs.graph.dtos.ApiResponse;
+import com.gs.graph.adapters.input.dtos.ApiResponse;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

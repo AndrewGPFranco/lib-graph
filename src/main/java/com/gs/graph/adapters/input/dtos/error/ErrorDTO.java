@@ -1,6 +1,6 @@
-package com.gs.graph.dtos.errors;
+package com.gs.graph.adapters.input.dtos.error;
 
-import com.gs.graph.dtos.ApiResponse;
+import com.gs.graph.adapters.input.dtos.ApiResponse;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.http.HttpStatus;

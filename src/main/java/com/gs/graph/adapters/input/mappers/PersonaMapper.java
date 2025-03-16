@@ -1,8 +1,8 @@
-package com.gs.graph.mappers;
+package com.gs.graph.adapters.input.mappers;
 
-import com.gs.graph.dtos.persona.PersonaDTO;
-import com.gs.graph.entities.Anime;
-import com.gs.graph.entities.Persona;
+import com.gs.graph.adapters.input.dtos.persona.PersonaDTO;
+import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.domain.entities.Persona;
 
 public class PersonaMapper {
 

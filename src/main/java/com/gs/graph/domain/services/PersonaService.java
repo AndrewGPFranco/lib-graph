@@ -1,12 +1,12 @@
-package com.gs.graph.services;
+package com.gs.graph.domain.services;
 
-import com.gs.graph.dtos.persona.PersonaDTO;
-import com.gs.graph.entities.Anime;
-import com.gs.graph.entities.Persona;
-import com.gs.graph.exceptions.NotFoundException;
-import com.gs.graph.mappers.PersonaMapper;
-import com.gs.graph.repositories.AnimeRepository;
-import com.gs.graph.repositories.PersonaRepository;
+import com.gs.graph.adapters.input.dtos.persona.PersonaDTO;
+import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.domain.entities.Persona;
+import com.gs.graph.domain.exceptions.NotFoundException;
+import com.gs.graph.adapters.input.mappers.PersonaMapper;
+import com.gs.graph.ports.repositories.AnimeRepository;
+import com.gs.graph.ports.repositories.PersonaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +25,9 @@ public class PersonaService {
         try {
             Anime anime = getAnimeOrElseThrowException(personaDTO.animeId());
             Persona persona = PersonaMapper.dtoToEntity(personaDTO, anime);
-            repository.save(persona);
+            Persona savedPersona = repository.save(persona);
 
-            return PersonaMapper.entityToDTO(persona);
+            return PersonaMapper.entityToDTO(savedPersona);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

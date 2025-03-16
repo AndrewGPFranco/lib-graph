@@ -1,4 +1,4 @@
-package com.gs.graph.entities;
+package com.gs.graph.domain.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

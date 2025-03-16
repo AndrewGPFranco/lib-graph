@@ -1,9 +1,9 @@
-package com.gs.graph.controllers;
+package com.gs.graph.adapters.input.rest;
 
-import com.gs.graph.dtos.ApiResponse;
-import com.gs.graph.dtos.animes.AnimeDTO;
-import com.gs.graph.dtos.errors.ErrorDTO;
-import com.gs.graph.services.AnimeService;
+import com.gs.graph.adapters.input.dtos.ApiResponse;
+import com.gs.graph.adapters.input.dtos.anime.AnimeDTO;
+import com.gs.graph.adapters.input.dtos.error.ErrorDTO;
+import com.gs.graph.domain.services.AnimeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

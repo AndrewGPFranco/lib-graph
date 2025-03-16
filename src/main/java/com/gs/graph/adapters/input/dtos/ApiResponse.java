@@ -1,4 +1,4 @@
-package com.gs.graph.dtos;
+package com.gs.graph.adapters.input.dtos;
 
 /**
  * Ajuda a tipar o {@link org.springframework.http.ResponseEntity} nos controllers.

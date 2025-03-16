@@ -1,4 +1,4 @@
-package com.gs.graph.exceptions;
+package com.gs.graph.domain.exceptions;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

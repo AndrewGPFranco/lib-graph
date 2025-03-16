@@ -1,7 +1,7 @@
-package com.gs.graph.mappers;
+package com.gs.graph.adapters.input.mappers;
 
-import com.gs.graph.dtos.animes.AnimeDTO;
-import com.gs.graph.entities.Anime;
+import com.gs.graph.adapters.input.dtos.anime.AnimeDTO;
+import com.gs.graph.domain.entities.Anime;
 
 public class AnimeMapper {
 
