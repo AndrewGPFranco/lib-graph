@@ -1,6 +1,6 @@
 package com.gs.graph.ports.repositories;
 
-import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.domain.entities.animes.Anime;
 
 import java.util.List;
 import java.util.Optional;

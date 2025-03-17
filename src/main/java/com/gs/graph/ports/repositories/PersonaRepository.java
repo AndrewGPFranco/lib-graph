@@ -1,6 +1,6 @@
 package com.gs.graph.ports.repositories;
 
-import com.gs.graph.domain.entities.Persona;
+import com.gs.graph.domain.entities.personas.Persona;
 
 import java.util.List;
 

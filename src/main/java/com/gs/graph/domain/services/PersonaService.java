@@ -1,8 +1,8 @@
 package com.gs.graph.domain.services;
 
 import com.gs.graph.adapters.input.dtos.persona.PersonaDTO;
-import com.gs.graph.domain.entities.Anime;
-import com.gs.graph.domain.entities.Persona;
+import com.gs.graph.domain.entities.animes.Anime;
+import com.gs.graph.domain.entities.personas.Persona;
 import com.gs.graph.domain.exceptions.NotFoundException;
 import com.gs.graph.adapters.input.mappers.PersonaMapper;
 import com.gs.graph.ports.repositories.AnimeRepository;

@@ -1,7 +1,7 @@
 package com.gs.graph.repositories;
 
 import com.gs.graph.AbstractContainerBaseTest;
-import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.domain.entities.animes.Anime;
 import com.gs.graph.ports.repositories.AnimeRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

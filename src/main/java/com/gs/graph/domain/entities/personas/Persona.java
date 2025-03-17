@@ -1,5 +1,8 @@
-package com.gs.graph.domain.entities;
+package com.gs.graph.domain.entities.personas;
 
+import com.gs.graph.domain.entities.animes.Anime;
+import com.gs.graph.domain.graph.GraphNode;
+import com.gs.graph.domain.graph.Node;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,8 +14,8 @@ import java.util.UUID;
 @Entity
 @ToString
 @NoArgsConstructor
-@EqualsAndHashCode
-public class Persona {
+@EqualsAndHashCode(callSuper = false)
+public class Persona extends Node implements GraphNode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -36,5 +39,13 @@ public class Persona {
         this.name = name;
         this.anime = anime;
         this.urlImage = urlImage;
+    }
+
+
+    public Persona(UUID uuid, String name, Anime anime, String url) {
+        this.id = uuid;
+        this.name = name;
+        this.anime = anime;
+        this.urlImage = url;
     }
 }

@@ -1,7 +1,7 @@
 package com.gs.graph.domain.services;
 
 import com.gs.graph.adapters.input.dtos.anime.AnimeDTO;
-import com.gs.graph.domain.entities.Anime;
+import com.gs.graph.domain.entities.animes.Anime;
 import com.gs.graph.adapters.input.mappers.AnimeMapper;
 import com.gs.graph.ports.repositories.AnimeRepository;
 import lombok.RequiredArgsConstructor;
